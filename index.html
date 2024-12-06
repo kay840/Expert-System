@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project || Prediksi Penyakit</title>
+  <style>
+    /* Body styling untuk memberikan latar belakang hijau muda */
+    body {
+      font-family: 'Arial', sans-serif;  /* Menentukan font */
+      background-color: #ffffff; /* Background hijau muda */
+      margin: 0;
+      padding: 20px;
+      color: #ffffff; /* Warna teks utama */
+    }
+
+    /* Styling untuk judul utama (h1) */
+    h1 {
+      color: #000000; /* Hijau khas kesehatan */
+      text-align: center; /* Menengahkan teks */
+      font-size: 36px;  /* Ukuran font */
+      margin-bottom: 30px; /* Memberikan jarak bawah */
+    }
+
+    /* Styling untuk header yang mencakup logo dan judul */
+    .header {
+      text-align: center; /* Menengahkan elemen di dalamnya */
+      margin-bottom: 30px; /* Memberikan jarak bawah */
+    }
+
+    /* Gaya untuk logo (menentukan ukuran logo) */
+    .header img {
+      width: 120px;  /* Ukuran logo */
+      height: auto;  /* Menjaga proporsi gambar */
+      margin-bottom: 20px; /* Memberikan jarak bawah */
+    }
+
+    /* Styling untuk elemen label agar terlihat jelas */
+    label {
+      font-size: 16px; /* Ukuran font label */
+      font-weight: bold; /* Membuat teks label lebih tebal */
+      color: #000000; /* Warna hijau untuk label */
+    }
+
+    /* Styling untuk input dan tombol untuk kenyamanan pengguna */
+    input, button {
+      padding: 12px; /* Padding agar lebih luas */
+      width: 100%;  /* Memastikan lebar 100% dari elemen induk */
+      margin: 8px 0;  /* Memberikan jarak vertikal */
+      border-radius: 8px; /* Membuat sudut lebih melengkung */
+      border: 1px solid #000000; /* Border berwarna hijau */
+    }
+
+    /* Gaya khusus untuk input teks */
+    input {
+      font-size: 16px; /* Ukuran font input */
+      margin-bottom: 20px; /* Memberikan jarak bawah */
+    }
+
+    /* Gaya untuk tombol yang lebih mencolok dengan efek hover */
+    button {
+      background-color: #000000; /* Warna latar belakang tombol */
+      color: white; /* Warna teks tombol */
+      font-size: 18px; /* Ukuran font tombol */
+      font-weight: bold; /* Tebal untuk teks tombol */
+      border: none;  /* Menghilangkan border default */
+      cursor: pointer; /* Menunjukkan kursor pointer */
+      transition: background-color 0.3s; /* Efek transisi saat hover */
+    }
+
+    /* Efek hover untuk tombol */
+    button:hover {
+      background-color: #000000; /* Warna hijau gelap saat tombol dihover */
+    }
+
+    /* Styling untuk bagian hasil prediksi */
+    .result {
+      padding: 20px;
+      background-color: #000000; /* Latar belakang putih untuk hasil */
+      border: 1px solid #ddd; /* Border abu-abu muda */
+      border-radius: 8px; /* Sudut melengkung */
+      margin-top: 30px; /* Memberikan jarak atas */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    }
+
+    /* Styling untuk judul dalam bagian hasil prediksi */
+    .result h2 {
+      color: #ffffff; /* Warna hijau untuk judul hasil */
+    }
+
+    /* Gaya untuk paragraf dalam hasil prediksi */
+    .result p {
+      font-size: 18px; /* Ukuran font untuk hasil */
+    }
+
+    /* Styling untuk container form agar lebih terpusat */
+    .container {
+      max-width: 600px; /* Membatasi lebar maksimal */
+      margin: 0 auto; /* Menempatkan container di tengah */
+      background-color: #ffffff; /* Latar belakang putih */
+      padding: 30px; /* Padding untuk ruang dalam */
+      border-radius: 10px; /* Sudut melengkung */
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    }
+
+    /* Gaya untuk grup input agar ada jarak antar elemen */
+    .input-group {
+      margin-bottom: 15px; /* Memberikan jarak bawah pada input */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Container utama untuk form dan hasil -->
+  <div class="container">
+    <!-- Header yang mencakup logo dan judul -->
+    <div class="header">
+      <img src="logo.png" alt="Logo Kesehatan"> <!-- Ganti dengan path logo Anda -->
+      <h1>Prediksi Penyakit dan Pencegahannya</h1>
+    </div>
+    
+    <!-- Form untuk memasukkan gejala -->
+    <form id="predictionForm">
+      <div class="input-group">
+        <label for="demam">Demam (1 = Ya, 0 = Tidak):</label>
+        <input type="number" id="demam" min="0" max="1" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="batuk">Batuk (1 = Ya, 0 = Tidak):</label>
+        <input type="number" id="batuk" min="0" max="1" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="sakitKepala">Sakit Kepala (1 = Ya, 0 = Tidak):</label>
+        <input type="number" id="sakitKepala" min="0" max="1" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="nyeriOtot">Nyeri Otot (1 = Ya, 0 = Tidak):</label>
+        <input type="number" id="nyeriOtot" min="0" max="1" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="mual">Mual (1 = Ya, 0 = Tidak):</label>
+        <input type="number" id="mual" min="0" max="1" required>
+      </div>
+
+      <button type="submit">Prediksi</button>
+    </form>
+
+    <!-- Bagian untuk menampilkan hasil prediksi -->
+    <div id="result" class="result" style="display: none;">
+      <h2>Hasil Prediksi</h2>
+      <p><strong>Penyakit:</strong> <span id="predictedDisease"></span></p>
+      <p><strong>Pencegahan:</strong> <span id="prevention"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // Fungsi untuk melakukan prediksi berdasarkan gejala yang dimasukkan
+    function predictDisease(gejala) {
+      const [demam, batuk, sakitKepala, nyeriOtot, mual] = gejala;
+
+      // Logika prediksi berdasarkan kombinasi gejala
+      if (demam === 1 && batuk === 1 && sakitKepala === 0 && nyeriOtot === 0 && mual === 0) {
+        return { penyakit: "Flu", pencegahan: "Istirahat, minum air hangat, konsumsi vitamin C" };
+      } else if (batuk === 1 && nyeriOtot === 1 && demam === 0) {
+        return { penyakit: "Batuk Kronis", pencegahan: "Hindari debu, konsumsi obat batuk, konsultasikan dengan dokter" };
+      } else if (demam === 1 && sakitKepala === 1 && nyeriOtot === 1 && mual === 1) {
+        return { penyakit: "Demam Berdarah", pencegahan: "Jaga kebersihan lingkungan, gunakan lotion anti nyamuk" };
+      } else if (nyeriOtot === 1 && sakitKepala === 1 && demam === 0 && mual === 1) {
+        return { penyakit: "Tipes", pencegahan: "Cuci tangan, makan makanan bersih, hindari makanan mentah" };
+      } else if (demam === 1 && mual === 1 && nyeriOtot === 0 && sakitKepala === 0) {
+        return { penyakit: "Infeksi Saluran Pencernaan", pencegahan: "Konsumsi makanan bersih, hindari makanan pedas, minum oralit" };
+      } else if (sakitKepala === 1 && nyeriOtot === 1 && batuk === 0 && demam === 0) {
+        return { penyakit: "Migrain", pencegahan: "Istirahat di tempat gelap, hindari stres, konsumsi obat sakit kepala" };
+      } else {
+        return { penyakit: "Sehat", pencegahan: "Tetap jaga pola hidup sehat" };
+      }
+    }
+
+    // Event Listener untuk form agar dapat menerima input dan menampilkan hasil
+    document.getElementById('predictionForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Mencegah form melakukan submit normal
+
+      // Mengambil nilai inputan dari pengguna
+      const demam = parseInt(document.getElementById('demam').value);
+      const batuk = parseInt(document.getElementById('batuk').value);
+      const sakitKepala = parseInt(document.getElementById('sakitKepala').value);
+      const nyeriOtot = parseInt(document.getElementById('nyeriOtot').value);
+      const mual = parseInt(document.getElementById('mual').value);
+
+      // Menjalankan prediksi
+      const result = predictDisease([demam, batuk, sakitKepala, nyeriOtot, mual]);
+
+      // Menampilkan hasil prediksi di halaman
+      document.getElementById('predictedDisease').textContent = result.penyakit;
+      document.getElementById('prevention').textContent = result.pencegahan;
+      document.getElementById('result').style.display = 'block'; // Menampilkan bagian hasil
+    });
+  </script>
+</body>
+</html>
